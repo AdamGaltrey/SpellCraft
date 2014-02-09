@@ -68,9 +68,10 @@ public class SpellMenu {
 				}
 				p.getItemInHand().setItemMeta(met);
 			}
-		}, SpellCraft.p).setOption(0, new ItemStack(Material.GLASS, 1), "No Spell", "Disable any active spells.")
-				.setOption(2, new ItemStack(Material.ARROW, 1), "ExplosiveArrow", "Fires an explosive arrow.")
-				.setOption(4, new ItemStack(Material.SNOW_BALL, 1), "Singularity", "Creates a singularity at your target position.")
-				.setOption(6, new ItemStack(Material.SNOW_BALL, 1), "Fling", "Fling yourself through the air.");
+		}, SpellCraft.p).setOption(0, new ItemStack(Material.GLASS, 1), ChatColor.RED + "No Spell", ChatColor.RESET + "Disable any active spells.")
+				.setOption(2, new ItemStack(Material.ARROW, 1), ChatColor.GREEN + "ExplosiveArrow", ChatColor.RESET + "Fires an explosive arrow.")
+				.setOption(4, new ItemStack(Material.ENDER_PEARL, 1), ChatColor.GREEN + "Singularity", ChatColor.RESET + "Creates a singularity", ChatColor.RESET + "at your target position.")
+				.setOption(6, new ItemStack(Material.RED_MUSHROOM, 1), ChatColor.GREEN + "Fling", ChatColor.RESET + "Fling yourself through the air.");
 	}
 }
+ 
