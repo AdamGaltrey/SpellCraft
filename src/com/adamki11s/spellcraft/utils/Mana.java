@@ -12,7 +12,7 @@ public class Mana implements Runnable {
 		// regen 1 mana point per second
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			if (p.getLevel() < manaCap) {
-				p.setLevel(p.getLevel() + 1);
+				p.setLevel(p.getLevel() + 5);
 			}
 		}
 	}
