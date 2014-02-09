@@ -75,5 +75,5 @@ public class ExplosiveArrowSpell extends SpellData implements Spell, Listener {
 	public ItemStack getIcon() {
 		return icon;
 	}
-
+	
 }
