@@ -58,7 +58,6 @@ public class FlingSpell extends SpellData implements Spell, Listener {
 
 	@Override
 	public ItemStack getIcon() {
-		// TODO Auto-generated method stub
 		return icon;
 	}
 
