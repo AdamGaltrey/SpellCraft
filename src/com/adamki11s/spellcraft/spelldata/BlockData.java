@@ -8,6 +8,7 @@ public class BlockData {
 	public final World w;
 	public final int x,y,z,id;
 	public final byte data;
+	
 	public BlockData(World w, int x, int y, int z, int id, byte data) {
 		this.w = w;
 		this.x = x;
@@ -16,6 +17,8 @@ public class BlockData {
 		this.id = id;
 		this.data = data;
 	}
+	
+	@SuppressWarnings("deprecation")
 	public BlockData(Block b){
 		this.w = b.getWorld();
 		this.x = b.getX();

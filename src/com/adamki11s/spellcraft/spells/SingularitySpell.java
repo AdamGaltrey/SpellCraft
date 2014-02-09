@@ -35,16 +35,21 @@ import com.adamki11s.spellcraft.spelldata.SpellData;
 
 public class SingularitySpell extends SpellData implements Spell, Listener, Runnable {
 
-	/*
-	 * SINGULARITY PROCEDURE --------------------- 1) Define centre point 2)
-	 * Collect blocks within radius of (x) blocks 3) Clear blocks within a
-	 * radius of (x + 1) blocks around for clearance 4) Spawn falling entities
-	 * and apply velocity to centre point every 2 ticks 5) After t ticks have
-	 * elasped send all blocks away from centre point as explosion (Must affect
-	 * players also) ---------------------
-	 */
-
 	private final ItemStack icon;
+	
+	private Location centre;
+
+	private int cycles = 0;
+	BukkitTask id;
+
+	Random r;
+
+	private List<FallingBlock> entities = new ArrayList<FallingBlock>();
+
+	List<Integer> ids;
+	List<Byte> data;
+
+	private final int radius = 2;
 
 	public SingularitySpell(int cooldownSeconds, int manaCost) {
 		super(cooldownSeconds, manaCost);
@@ -61,20 +66,6 @@ public class SingularitySpell extends SpellData implements Spell, Listener, Runn
 	private static void entityChange(EntityChangeBlockEvent evt) {
 		evt.setCancelled(true);
 	}
-
-	private Location centre;
-
-	private int cycles = 0;
-	BukkitTask id;
-
-	Random r;
-
-	private List<FallingBlock> entities = new ArrayList<FallingBlock>();
-
-	List<Integer> ids;
-	List<Byte> data;
-
-	private final int radius = 2;
 
 	@Override
 	public void run() {
@@ -156,6 +147,7 @@ public class SingularitySpell extends SpellData implements Spell, Listener, Runn
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void cast(Player p) {
 		if (super.attemptCast(p)) {

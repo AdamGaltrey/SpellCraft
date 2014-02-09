@@ -23,6 +23,8 @@ import com.adamki11s.spellcraft.spelldata.SpellData;
 public class FlingSpell extends SpellData implements Spell, Listener {
 
 	private final ItemStack icon;
+	
+	private static Set<String> exempt = new HashSet<String>();
 
 	public FlingSpell(int cooldownSeconds, int manaCost) {
 		super(cooldownSeconds, manaCost);
@@ -33,8 +35,6 @@ public class FlingSpell extends SpellData implements Spell, Listener {
 		icon.setItemMeta(met);
 		Bukkit.getPluginManager().registerEvents(this, SpellCraft.p);
 	}
-
-	private static Set<String> exempt = new HashSet<String>();
 
 	@EventHandler
 	private void ede(EntityDamageEvent evt) {

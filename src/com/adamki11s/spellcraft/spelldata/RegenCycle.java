@@ -24,6 +24,7 @@ public class RegenCycle implements Runnable {
 	}
 
 	// run every 2 ticks
+	@SuppressWarnings("deprecation")
 	@Override
 	public void run() {
 		for (int i = 0; i <= 1; i++) {
